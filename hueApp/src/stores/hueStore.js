@@ -83,6 +83,8 @@ export default class hueStore {
 
   @action
   async getLights(){
+    const blog = await fetch(`http://${this.baseAPIURL}/lights`)
+    const 
     //TODO: getLigts action - call Philips Hue Light API
     //TODO: Transform Lights object into Array and store in lightsList observable
   }
