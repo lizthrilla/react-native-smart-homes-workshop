@@ -9,7 +9,7 @@ import { ColorPicker } from 'react-native-color-picker'
 import { SCREEN, CONTAINER, colors } from '../theme';
 
 //TODO: Fill relevant UUID and charecters by using NRF Connect and reverse engineering logs
-const LEDBULUBNAME = ''
+const LEDBULUBNAME = 'LEDBLE-78602DC1'
 const LED_BULB_SERVICE_UUID = ''
 const LED_BULB_SERVICE_CHAR = ''
 
@@ -86,7 +86,9 @@ export class LightBulbScreen extends React.Component {
   )
 
   get lightBulb(){
-    //TODO: Return light bulb if exist
+    //TODO: Return light bulb if exist\
+    const { deviceList } = this.props.bluetoothStore
+    return deviceList.filter(device => device.localName === LEDBULUBNAME)[0]
   }
 
   renderStatusView = () => (
